@@ -9795,6 +9795,17 @@ public final class Settings {
         };
 
         /**
+         * Value to specify if Wi-Fi Scan Throttling is enabled.
+         *
+         * Type: int (0 for false, 1 for true)
+         * @hide
+         */
+        @SystemApi
+        public static final String WIFI_SCAN_THROTTLING_ENABLED = "wifi_scan_throttling_enabled";
+
+        private static final Validator WIFI_SCAN_THROTTLING_ENABLED_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * The number of milliseconds the {@link com.android.server.NetworkScoreService}
          * will give a recommendation request to complete before returning a default response.
          *

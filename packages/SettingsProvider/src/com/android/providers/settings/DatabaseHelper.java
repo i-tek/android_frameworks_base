@@ -2516,6 +2516,9 @@ class DatabaseHelper extends SQLiteOpenHelper {
             loadBooleanSetting(stmt, Settings.Global.WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON,
                     R.bool.def_networks_available_notification_on);
 
+            loadBooleanSetting(stmt, Settings.Global.WIFI_SCAN_THROTTLING_ENABLED,
+                    R.bool.def_wifi_scan_throttling);
+
             loadBooleanSetting(stmt, Settings.Global.BLUETOOTH_ON,
                     R.bool.def_bluetooth_on);
 
