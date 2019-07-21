@@ -22,4 +22,5 @@
 -->
 <resources>
     <string name="def_tv_user_setup_complete" translatable="false"></string>
+    <bool name="def_wifi_scan_throttling">true</bool>
 </resources>

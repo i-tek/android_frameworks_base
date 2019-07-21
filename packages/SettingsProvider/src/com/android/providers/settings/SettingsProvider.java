@@ -3833,6 +3833,22 @@ public class SettingsProvider extends ContentProvider {
                     currentVersion = 169;
                 }
 
+                if (currentVersion == 169) {
+                    // Version 169: by default, throttle wifi scanning
+                    // WIFI_SCAN_THROTTLING_ENABLED added
+                    final SettingsState settings = getGlobalSettingsLocked();
+                    final Setting currentSetting = settings.getSettingLocked(
+                            Global.WIFI_SCAN_THROTTLING_ENABLED);
+                    if (currentSetting.isNull()) {
+                        settings.insertSettingLocked(
+                                Settings.Global.WIFI_SCAN_THROTTLING_ENABLED,
+                                getContext().getResources().getBoolean(
+                                        R.bool.def_wifi_scan_throttling) ? "1" : "0",
+                                null, true, SettingsState.SYSTEM_PACKAGE_NAME);
+                    }
+                    currentVersion = 170;
+                }
+
                 // vXXX: Add new settings above this point.
 
                 if (currentVersion != newVersion) {
